@@ -32,4 +32,5 @@ public class Solution {
     public static int method5() {
         return  Thread.currentThread().getStackTrace()[2].getLineNumber();
     }
+
 }
