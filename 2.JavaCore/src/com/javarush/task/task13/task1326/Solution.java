@@ -4,35 +4,38 @@ package com.javarush.task.task13.task1326;
 Сортировка четных чисел из файла
 */
 
-import java.io.*;
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)throws IOException {
         // напишите тут ваш код
 
-
+//-------------------------------------------------------
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String fileName = reader.readLine();
-        FileInputStream stream = new FileInputStream(fileName);
+        BufferedReader fileReader = new BufferedReader(new InputStreamReader(new FileInputStream(reader.readLine())));
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter(reader.readLine()));
-
-        int symbol;
-        int Array array = new Array();
-
-
-        while (!(line = reader.readLine()).equals("exit")) {
-            list.add(line);
+/*
+        List<Integer> list = new LinkedList<>();
+        while (fileReader.ready()) {
+            list.add(Integer.valueOf(fileReader.readLine()));
         }
-        list.add(line);
-
-        for (String s : list) {
-            writer.write(String.format("%s%n",s));
+*/
+        String line;
+        List<Integer> list = new LinkedList<>();
+        while ((line = fileReader.readLine()) != null) {
+            list.add(Integer.valueOf(line));
         }
+
+        list.stream().filter(v -> v % 2 == 0).sorted().forEach(System.out::println);
 
         reader.close();
-        writer.close();
+        fileReader.close();
 
     }
 }
