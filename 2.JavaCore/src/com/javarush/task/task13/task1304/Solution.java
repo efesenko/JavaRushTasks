@@ -4,7 +4,7 @@ package com.javarush.task.task13.task1304;
 Selectable и Updatable
 */
 
-import javax.xml.bind.SchemaOutputResolver;
+//import javax.xml.bind.SchemaOutputResolver;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
