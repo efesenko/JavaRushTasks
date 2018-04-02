@@ -34,9 +34,9 @@ public class Solution {
 
     public static void doWork(Person person) {
         // пункт 3
-        if (person instanceof User) person.live();
-        else if (person instanceof Loser) person.doNothing();
-        else if (person instanceof Coder) person.coding();
-        else if (person instanceof Proger) person.enjoy();
+        if (person instanceof Person.User) ((Person.User) person).live();
+        else if (person instanceof Person.Loser) ((Person.Loser) person).doNothing();
+        else if (person instanceof Person.Coder) ((Person.Coder) person).coding();
+        else if (person instanceof Person.Proger) ((Person.Proger) person).enjoy();
     }
 }
